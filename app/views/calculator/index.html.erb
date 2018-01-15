@@ -1,0 +1,13 @@
+<h1>This is my calculator landing page</h1>
+
+<% @calc.each do |c| %>
+
+	<ul>
+		<li><%= c.id %></li>
+		<li><%= c.value_a %></li>
+		<li><%= c.value_b %></li>
+		<li><%= c.value_a * c.value_b %></li>
+	</ul>
+<% end %>
+
+<%= link_to "New Calculation", new_calculator_path %>

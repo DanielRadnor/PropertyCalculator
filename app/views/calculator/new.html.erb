@@ -1,0 +1,8 @@
+
+<h1>New Calculation</h1>
+
+<%= form_for @calc, url: {action: "create"} do |f| %>
+  <%= f.text_field :value_a %>
+  <%= f.text_field :value_b %>
+  <%= f.submit "Create" %>
+<% end %>
