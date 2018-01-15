@@ -1,13 +1,22 @@
 <h1>This is my calculator landing page</h1>
 
-<% @calc.each do |c| %>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Value A</th>
+		<th>Value B</th>
+		<th>Product A x B</th>
+		<th>Value C</th>
+	</tr>
 
-	<ul>
-		<li><%= c.id %></li>
-		<li><%= c.value_a %></li>
-		<li><%= c.value_b %></li>
-		<li><%= c.value_a * c.value_b %></li>
-	</ul>
-<% end %>
+	<% @calc.each do |c| %>
+		<tr>
+			<td><%= c.id %></td>
+			<td><%= c.value_a %></td>
+			<td><%= c.value_b %></td>
+			<td><%= c.value_a * c.value_b %></td>
+		</tr>
+	<% end %>
+</table>
 
 <%= link_to "New Calculation", new_calculator_path %>
