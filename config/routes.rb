@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :calculator
+  
+  resources :properties
+  
+  resources :sectors
 
 end

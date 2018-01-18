@@ -1,0 +1,17 @@
+<h1>This is my sector landing page</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Sector Name</th>
+	</tr>
+
+	<% @sector.each do |s| %>
+		<tr>
+			<td><%= s.id %></td>
+			<td><%= s.sector_name %></td>	
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "New Sector", new_sector_path %>

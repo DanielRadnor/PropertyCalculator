@@ -10,11 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113074426) do
+ActiveRecord::Schema.define(version: 20180118220140) do
 
   create_table "calculators", force: :cascade do |t|
     t.decimal "value_a"
     t.decimal "value_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.text "property_name"
+    t.text "address"
+    t.text "postcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sector_id"
+  end
+
+  create_table "scenarios", force: :cascade do |t|
+    t.decimal "value_c"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "calculator_id"
+  end
+
+  create_table "sectors", force: :cascade do |t|
+    t.text "sector_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

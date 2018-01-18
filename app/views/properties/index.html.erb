@@ -1,0 +1,24 @@
+<h1>This is my property landing page</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Property Name</th>
+		<th>Address</th>
+		<th>Postcode</th>
+		<th>Sector</th>
+	</tr>
+
+	<% @property.each do |p| %>
+		<tr>
+			<td><%= p.id %></td>
+			<td><%= p.property_name %></td>	
+			<td><%= p.address %></td>	
+			<td><%= p.postcode %></td>	
+			<td><%= p.sector.sector_name %></td>	
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "New Property", new_property_path %>
+
