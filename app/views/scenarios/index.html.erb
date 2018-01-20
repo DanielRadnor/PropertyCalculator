@@ -1,0 +1,23 @@
+<h1>This is my scenario index page</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Scenario Name</th>
+		<th>Descriptions</th>
+		<th>Property</th>
+	</tr>
+
+	<% @scenario.each do |s| %>
+		<tr>
+			<td><%= s.id %></td>
+			<td><%= s.scenario_name %></td>	
+			<td><%= s.description %></td>
+			<td><%= s.property.property_name %></td>	
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "New Scenario", new_scenario_path %>
+
+<%= link_to "Properties", properties_path %>

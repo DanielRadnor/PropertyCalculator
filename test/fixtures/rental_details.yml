@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_of_beds: 1
+  weekly_rent: 9.99
+  term_weeks: 9.99
+  occupancy: 9.99
+  scenario_id: 1
+
+two:
+  number_of_beds: 1
+  weekly_rent: 9.99
+  term_weeks: 9.99
+  occupancy: 9.99
+  scenario_id: 1

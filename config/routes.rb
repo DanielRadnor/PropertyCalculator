@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   resources :properties
   
   resources :sectors
+  
+  resources :scenarios
+  
+  resources :rental_details
 
 end

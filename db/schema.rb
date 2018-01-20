@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118220140) do
+ActiveRecord::Schema.define(version: 20180120152918) do
 
   create_table "calculators", force: :cascade do |t|
     t.decimal "value_a"
@@ -28,11 +28,22 @@ ActiveRecord::Schema.define(version: 20180118220140) do
     t.integer "sector_id"
   end
 
-  create_table "scenarios", force: :cascade do |t|
-    t.decimal "value_c"
+  create_table "rental_details", force: :cascade do |t|
+    t.integer "number_of_beds"
+    t.decimal "weekly_rent"
+    t.decimal "term_weeks"
+    t.decimal "occupancy"
+    t.integer "scenario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "calculator_id"
+  end
+
+  create_table "scenarios", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "scenario_name"
+    t.text "description"
+    t.integer "property_id"
   end
 
   create_table "sectors", force: :cascade do |t|

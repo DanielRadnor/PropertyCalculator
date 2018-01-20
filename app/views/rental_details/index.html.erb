@@ -1,0 +1,27 @@
+<h1>This is my rental detail index page</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Number of Beds</th>
+		<th>Weekly Rent</th>
+		<th>Term (weeks)</th>
+		<th>Occupancy</th>
+		<th>Scenario Name</th>
+	</tr>
+
+	<% @rental_detail.each do |d| %>
+		<tr>
+			<td><%= d.id %></td>
+			<td><%= d.number_of_beds %></td>	
+			<td><%= d.weekly_rent %></td>
+			<td><%= d.term_weeks %></td>
+			<td><%= d.occupancy %></td>
+			<td><%= d.scenario.scenario_name %></td>		
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "New Rental Details", new_rental_detail_path %>
+
+<%= link_to "Scenarios", scenarios_path %>
