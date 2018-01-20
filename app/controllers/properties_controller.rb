@@ -10,7 +10,6 @@ class PropertiesController < ApplicationController
   
   def create
     @property = Property.new(property_params)
-    @property.sector = Sector.first
     if @property.save
       #flash[:success] = "Property was saved successfully"
       redirect_to properties_path
@@ -27,7 +26,7 @@ class PropertiesController < ApplicationController
   private
   
   def property_params
-    params.require(:property).permit(:property_name, :address, :postcode)
+    params.require(:property).permit(:property_name, :address, :postcode, :sector_id)
   end
   
   
