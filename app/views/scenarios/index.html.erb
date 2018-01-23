@@ -6,6 +6,8 @@
 		<th>Scenario Name</th>
 		<th>Descriptions</th>
 		<th>Property</th>
+		<th>Number of Beds</th>
+		<th>Value</th>
 	</tr>
 
 	<% @scenario.each do |s| %>
@@ -13,7 +15,15 @@
 			<td><%= s.id %></td>
 			<td><%= s.scenario_name %></td>	
 			<td><%= s.description %></td>
-			<td><%= s.property.property_name %></td>	
+			<td><%= s.property.property_name %></td>
+			<td>
+				<% if s.rental_detail.id?  %>
+					<%= s.rental_detail.number_of_beds %>
+				<% end %>
+			</td>	
+			<td>
+				<%= s.rental_detail.number_of_beds * 100 %>
+			</td>	
 		</tr>
 	<% end %>
 </table>

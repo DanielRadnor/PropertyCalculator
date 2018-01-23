@@ -1,0 +1,23 @@
+<h1>This is my valuation detail index page</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Net Initial Yield</th>
+		<th>Purchaser's Costs'</th>
+		<th>Scenario Name</th>
+	</tr>
+
+	<% @valuation_detail.each do |v| %>
+		<tr>
+			<td><%= v.id %></td>
+			<td><%= v.net_initial_yield %></td>	
+			<td><%= v.purchasers_costs %></td>
+			<td><%= v.scenario.scenario_name %></td>		
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "New Valuation Details", new_valuation_detail_path %>
+
+<%= link_to "Scenarios", scenarios_path %>
