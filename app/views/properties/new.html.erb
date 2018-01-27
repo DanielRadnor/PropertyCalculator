@@ -1,6 +1,8 @@
 
 <h1>New Property</h1>
 
+<div class="well well-md">
+
 <div class='row'>
 	<div class='col-xs-12'>
 		<%= form_for(@property, :html => {class: "form-horizontal", role: "form"}) do |f| %>
@@ -31,13 +33,16 @@
 					<%= f.text_field :postcode , class: "form-control", placeholder: "Postcode of the property" %>
 				</div>
 			</div>
-			
-			<div>
-			 	<%= f.label :sector %>
-		  		<%= collection_select(:property, :sector_id, Sector.all, :id, :sector_name, prompt: true) %>
-			</div>  
 
-			
+			<div class="form-group">
+				<div class="control-label col-sm-2">
+					<%= f.label :sector %>
+				</div>
+				<div class="col-sm-8">
+					<%= collection_select(:property, :sector_id, Sector.all, :id, :sector_name, prompt: true) %>
+				</div>
+			</div>
+						
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<%= f.submit class: 'btn btn-primary btn-lg' %>
@@ -49,4 +54,6 @@
 			[ <%= link_to "Cancel request and return to properties listing", properties_path %> ]
 		</div>
 	</div>
+</div>
+
 </div>

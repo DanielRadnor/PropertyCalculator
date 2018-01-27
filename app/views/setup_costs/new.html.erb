@@ -1,0 +1,48 @@
+
+<h1>New Setup Cost Details</h1>
+
+<%= form_for @setup_cost, url: {action: "create"} do |f| %>
+  <div>
+	  <%= f.label :purchase_price %>
+	  <%= f.text_field :purchase_price %>
+  </div>
+  <div>
+  	<%= f.label :sdlt %>
+  	<%= f.text_field :sdlt %>
+  </div>
+  <div>
+  	<%= f.label :acquisition_fee %>
+  	<%= f.text_field :acquisition_fee %>
+  </div>
+  <div>
+  	<%= f.label :debt_arrangement_fee %>
+  	<%= f.text_field :debt_arrangement_fee %>
+  </div>
+  <div>
+  	<%= f.label :equity_raising_fee %>
+  	<%= f.text_field :equity_raising_fee %>
+  </div>
+  <div>
+  	<%= f.label :legal_fee %>
+  	<%= f.text_field :legal_fee %>
+  </div>
+  <div>
+  	<%= f.label :survey_fee %>
+  	<%= f.text_field :survey_fee %>
+  </div>
+  <div>
+  	<%= f.label :admin_fee %>
+  	<%= f.text_field :admin_fee %>
+  </div>
+    <div>
+  	<%= f.label :contingency %>
+  	<%= f.text_field :contingency %>
+  </div>
+  <div>
+  	<%= f.label :scenario %>
+  	<%= collection_select(:setup_cost, :scenario_id, Scenario.all, :id, :scenario_name, prompt: true) %>
+  </div>  
+  <div>
+  	<%= f.submit "Create" %>
+  </div>
+<% end %>

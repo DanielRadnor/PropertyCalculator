@@ -15,4 +15,9 @@ Rails.application.routes.draw do
   resources :rental_details
 
   resources :valuation_details
+  
+  resources :debts
+  
+  resources :setup_costs
+  
 end

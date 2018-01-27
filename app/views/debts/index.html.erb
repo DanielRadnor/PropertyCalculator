@@ -1,0 +1,21 @@
+<h1>This is my debt detail index page</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>LTV</th>
+		<th>Scenario Name</th>
+	</tr>
+
+	<% @debt.each do |d| %>
+		<tr>
+			<td><%= d.id %></td>
+			<td><%= d.ltv %></td>	
+			<td><%= d.scenario.scenario_name %></td>		
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "New Debt Details", new_debt_path %>
+
+<%= link_to "Scenarios", scenarios_path %>

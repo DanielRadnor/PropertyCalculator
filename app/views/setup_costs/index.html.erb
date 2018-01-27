@@ -1,0 +1,37 @@
+<h1>This is my setup costs detail index page</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Purchase Price</th>
+		<th>SDLT</th>
+		<th>Acquisition Fee</th>
+		<th>Debt Arrangement Fee</th>
+		<th>Equity Raising Fee</th>
+		<th>Legal Fee</th>
+		<th>Surveys</th>
+		<th>Admin Fees</th>
+		<th>Contingency</th>
+		<th>Scenario Name</th>
+	</tr>
+
+	<% @setup_cost.each do |s| %>
+		<tr>
+			<td><%= s.id %></td>
+			<td><%= s.purchase_price %></td>	
+			<td><%= s.sdlt %></td>
+			<td><%= s.acquisition_fee %></td>
+			<td><%= s.debt_arrangement_fee %></td>
+			<td><%= s.equity_raising_fee %></td>
+			<td><%= s.legal_fee %></td>
+			<td><%= s.survey_fee %></td>
+			<td><%= s.admin_fee %></td>
+			<td><%= s.contingency %></td>
+			<td><%= s.scenario.scenario_name %></td>		
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "New Setup Costs", new_setup_cost_path %>
+
+<%= link_to "Scenarios", scenarios_path %>

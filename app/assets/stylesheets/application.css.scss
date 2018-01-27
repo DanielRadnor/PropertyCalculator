@@ -17,9 +17,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-table, th, td {
-    border: 1px solid black;
-}
 
 #logo {
     float: left;
@@ -66,11 +63,13 @@ table, th, td {
 
  
 .jumbotron {
+  background: url(https://thumb9.shutterstock.com/display_pic_with_logo/628843/628843,1318245635,2/stock-photo-city-of-london-one-of-the-leading-centres-of-global-finance-this-view-includes-tower-gherkin-86318047.jpg) no-repeat center center;
   background-size: cover;
   height: 200px;
 }
 
 .jumbotron h1 {
+  color: #fff;
   text-align: center;
   margin-bottom: 30px;
   letter-spacing: -1px;
@@ -78,13 +77,13 @@ table, th, td {
 }
 
 .jumbotron p {
+  color: #fff;
   text-align: center;
 }
 
-.btn-xlarge {
+.btn-primary-text {
   text-align: center;
-  font-size: 1.7em;
-  background-color: blue;
+  color: #black;
 }
 
 

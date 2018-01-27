@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180123214013) do
+ActiveRecord::Schema.define(version: 20180127133431) do
 
   create_table "calculators", force: :cascade do |t|
     t.decimal "value_a"
     t.decimal "value_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "debts", force: :cascade do |t|
+    t.decimal "ltv"
+    t.integer "scenario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +55,21 @@ ActiveRecord::Schema.define(version: 20180123214013) do
 
   create_table "sectors", force: :cascade do |t|
     t.text "sector_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "setup_costs", force: :cascade do |t|
+    t.decimal "purchase_price"
+    t.decimal "sdlt"
+    t.decimal "acquisition_fee"
+    t.decimal "debt_arrangement_fee"
+    t.decimal "equity_raising_fee"
+    t.decimal "legal_fee"
+    t.decimal "survey_fee"
+    t.decimal "admin_fee"
+    t.decimal "contingency"
+    t.integer "scenario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

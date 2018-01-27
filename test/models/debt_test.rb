@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ScenarioControllerTest < ActionDispatch::IntegrationTest
+class DebtTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

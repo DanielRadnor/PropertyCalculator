@@ -1,0 +1,16 @@
+
+<h1>New Debt Details</h1>
+
+<%= form_for @debt, url: {action: "create"} do |f| %>
+  <div>
+	  <%= f.label :ltv %>
+	  <%= f.text_field :ltv %>
+  </div>
+  <div>
+  	<%= f.label :scenario %>
+  	<%= collection_select(:debt, :scenario_id, Scenario.all, :id, :scenario_name, prompt: true) %>
+  </div>  
+  <div>
+  	<%= f.submit "Create" %>
+  </div>
+<% end %>

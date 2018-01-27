@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  purchase_price: 9.99
+  sdlt: 9.99
+  acquisition_fee: 9.99
+  debt_arrangement_fee: 9.99
+  equity_raising_fee: 9.99
+  legal_fee: 9.99
+  survey_fee: 9.99
+  admin_fee: 9.99
+  contingency: 9.99
+  scenario_id: 1
+
+two:
+  purchase_price: 9.99
+  sdlt: 9.99
+  acquisition_fee: 9.99
+  debt_arrangement_fee: 9.99
+  equity_raising_fee: 9.99
+  legal_fee: 9.99
+  survey_fee: 9.99
+  admin_fee: 9.99
+  contingency: 9.99
+  scenario_id: 1
