@@ -21,6 +21,11 @@
 				<td><%= p.address %></td>	
 				<td><%= p.postcode %></td>	
 				<td><%= p.sector.sector_name %></td>	
+				<td><%= link_to "View this property", property_path(p), class: "btn btn-xs btn-info" %></td>
+				<td><%= link_to "Edit this property", edit_property_path(p), class: "btn btn-xs btn-primary" %></td>
+				<td><%= link_to "Delete this property", property_path(p), method: :delete,
+								data: { confirm: "Are you sure you want to delete this property?"},
+								class: "btn btn-xs btn-danger" %></td>
 			</tr>
 		<% end %>
     </tbody>
