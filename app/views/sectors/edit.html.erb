@@ -1,0 +1,7 @@
+
+<h1>Sector ID: <%= sector.id%></h1>
+
+<%= form_for @sector, url: {action: "create"} do |f| %>
+  <%= f.text_field :sector_name %>
+  <%= f.submit "Create" %>
+<% end %>

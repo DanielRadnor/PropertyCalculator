@@ -1,0 +1,15 @@
+<h1>Show page for <%= @setup_cost.id %></h1>
+
+<div class="well col-xs-8 col-xs-offset-2">
+	
+	<ul class="nav nav-tabs">
+	  <li><%= link_to "Scenario Summary", scenario_path(@setup_cost.scenario.id)%></li>
+	  <li><%= link_to "Rental Details", rental_detail_path(@setup_cost.scenario.id)%></li>
+	  <li class="active"><%= link_to "Setup Costs", setup_cost_path(@setup_cost.id)%></li>
+	  <li><%= link_to "Debt", debt_path(@setup_cost.scenario.debt.id)%></li>
+	  <li><%= link_to "Valuation Details", valuation_detail_path(@setup_cost.scenario.valuation_detail.id)%></li>
+	</ul>
+
+	<h2>This is setup costs ID <%= @setup_cost.id %></h2>
+
+</div>

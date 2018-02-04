@@ -1,0 +1,15 @@
+<h1>Show page for <%= @valuation_detail.id %></h1>
+
+<div class="well col-xs-8 col-xs-offset-2">
+	
+	<ul class="nav nav-tabs">
+	  <li><%= link_to "Scenario Summary", scenario_path(@valuation_detail.scenario.id)%></li>
+	  <li><%= link_to "Rental Details", rental_detail_path(@valuation_detail.scenario.id)%></li>
+	  <li><%= link_to "Setup Costs", setup_cost_path(@valuation_detail.scenario.id)%></li>
+	  <li><%= link_to "Debt", debt_path(@valuation_detail.scenario.debt.id)%></li>
+	  <li class="active"><%= link_to "Valuation Details", valuation_detail_path(@valuation_detail.id)%></li>
+	</ul>
+
+	<h2>This is valuation detail ID <%= @valuation_detail.id %></h2>
+
+</div>

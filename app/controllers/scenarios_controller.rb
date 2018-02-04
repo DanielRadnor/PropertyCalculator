@@ -19,7 +19,26 @@ class ScenariosController < ApplicationController
     end    
   end
   
+  def update
+    @scenario = Scenario.find(params[:id])
+    if @scenario.update(scenario_params)
+      flash[:success] = "Scenario was saved successfully"
+      redirect_to scenario_path(@scenario)
+    else
+       render 'edit'
+    end
+  end
   
+  def show
+    @scenario = Scenario.find(params[:id])
+  end
+  
+  def destroy
+    @scenario = Scenario.find(params[:id])
+    @scenario.destroy
+    flash[:danger] = "Scenario was deleted successfully"
+    redirect_to scenarios_path
+  end
   
   # -----------------------------------
   

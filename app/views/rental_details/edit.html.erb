@@ -1,0 +1,28 @@
+
+<h1>Rental Detail ID: <%= @rental_detail.id %></h1>
+
+<%= form_for @rental_detail, url: {action: "create"} do |f| %>
+  <div>
+	  <%= f.label :number_of_beds %>
+	  <%= f.text_field :number_of_beds %>
+  </div>
+  <div>
+  	<%= f.label :weekly_rent %>
+  	<%= f.text_field :weekly_rent %>
+  </div>
+  <div>
+  	<%= f.label :term_weeks %>
+  	<%= f.text_field :term_weeks %>
+  </div>
+  <div>
+  	<%= f.label :occupancy %>
+  	<%= f.text_field :occupancy %>
+  </div>
+  <div>
+  	<%= f.label :scenario %>
+  	<%= collection_select(:rental_detail, :scenario_id, Scenario.all, :id, :scenario_name, prompt: true) %>
+  </div>  
+  <div>
+  	<%= f.submit "Create" %>
+  </div>
+<% end %>

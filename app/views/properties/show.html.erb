@@ -70,6 +70,7 @@
 					<tr>
 						<td><%= s.scenario_name %></td>
 						<td><%= s.description %></td>	
+						<td><%= link_to "View this scenario", scenario_path(s.id), class: "btn btn-xs btn-primary" %></td>	
 					</tr>
 					<% end %>
 			    </tbody>

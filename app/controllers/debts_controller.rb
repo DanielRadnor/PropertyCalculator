@@ -18,8 +18,27 @@ class DebtsController < ApplicationController
       render 'new'
     end    
   end
+
+  def update
+    @debt = Debt.find(params[:id])
+    if @debt.update(debt_params)
+      flash[:success] = "Debt was saved successfully"
+      redirect_to debt_path(@scenario)
+    else
+       render 'edit'
+    end
+  end
+    
+  def show
+    @debt = Debt.find(params[:id])
+  end
   
-  
+  def destroy
+    @debt = Debt.find(params[:id])
+    @debt.destroy
+    flash[:danger] = "Debt was deleted successfully"
+    redirect_to debts_path
+  end  
   
   # -----------------------------------
   

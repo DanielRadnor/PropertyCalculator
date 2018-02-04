@@ -1,0 +1,20 @@
+
+<h1>Valuation Detail ID: <%= @valuation_detail.id%></h1>
+
+<%= form_for @valuation_detail, url: {action: "create"} do |f| %>
+  <div>
+	  <%= f.label :net_initial_yield %>
+	  <%= f.text_field :net_initial_yield %>
+  </div>
+  <div>
+  	<%= f.label :purchasers_costs %>
+  	<%= f.text_field :purchasers_costs %>
+  </div>
+  <div>
+  	<%= f.label :scenario %>
+  	<%= collection_select(:valuation_detail, :scenario_id, Scenario.all, :id, :scenario_name, prompt: true) %>
+  </div>  
+  <div>
+  	<%= f.submit "Create" %>
+  </div>
+<% end %>

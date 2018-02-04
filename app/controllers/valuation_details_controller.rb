@@ -18,8 +18,27 @@ class ValuationDetailsController < ApplicationController
       render 'new'
     end    
   end
+
+  def update
+    @valuation_detail = ValuationDetail.find(params[:id])
+    if @valuation_detail.update(valuation_detail_params)
+      flash[:success] = "Valuation Detail was saved successfully"
+      redirect_to valuation_detail_path(@scenario)
+    else
+       render 'edit'
+    end
+  end
+    
+  def show
+    @valuation_detail = ValuationDetail.find(params[:id])
+  end
   
-  
+  def destroy
+    @valuation_detail = ValuationDetail.find(params[:id])
+    @valuation_detail.destroy
+    flash[:danger] = "Valuation Detail was deleted successfully"
+    redirect_to valuation_details_path
+  end
   
   # -----------------------------------
   

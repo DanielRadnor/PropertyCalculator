@@ -19,7 +19,26 @@ class RentalDetailsController < ApplicationController
     end    
   end
   
+  def update
+    @rental_detail = RentalDetail.find(params[:id])
+    if @rental_detail.update(rental_detail_params)
+      flash[:success] = "Rental Detail was saved successfully"
+      redirect_to rental_detail_path(@scenario)
+    else
+       render 'edit'
+    end
+  end
   
+  def show
+    @rental_detail = RentalDetail.find(params[:id])
+  end
+  
+  def destroy
+    @rental_detail = RentalDetail.find(params[:id])
+    @rental_detail.destroy
+    flash[:danger] = "Rental Detail was deleted successfully"
+    redirect_to rental_details_path
+  end
   
   # -----------------------------------
   
