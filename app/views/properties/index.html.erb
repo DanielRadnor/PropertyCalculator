@@ -1,8 +1,9 @@
 <h1>This is my property landing page</h1>
 
 <div class="container">
+  <div class="well">
   <h2>Properties Table</h2>
-  <p>This table contains all properties and attributes</p>            
+  <p>This table contains all properties and attributes <%= link_to "Add new property", new_property_path, class: "btn btn-xs btn-info" %></p>        
   <table class="table table-striped">
     <thead>
       <tr>
@@ -30,6 +31,7 @@
 		<% end %>
     </tbody>
   </table>
+  </div>
 </div>
 
 <div class='row'>
