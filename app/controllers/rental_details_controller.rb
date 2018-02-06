@@ -7,11 +7,15 @@ class RentalDetailsController < ApplicationController
   def new
     @rental_detail = RentalDetail.new
   end
+
+  def edit
+    @rental_detail = RentalDetail.find(params[:id])
+  end
   
   def create
     @rental_detail = RentalDetail.new(rental_detail_params)
     if @rental_detail.save
-      #flash[:success] = "Rental details were saved successfully"
+      flash[:success] = "Rental details were saved successfully"
       redirect_to rental_details_path
       #redirect_to rental_detail_path(@rental_detail) #this is to redirect to the show page
     else
@@ -22,8 +26,8 @@ class RentalDetailsController < ApplicationController
   def update
     @rental_detail = RentalDetail.find(params[:id])
     if @rental_detail.update(rental_detail_params)
-      flash[:success] = "Rental Detail was saved successfully"
-      redirect_to rental_detail_path(@scenario)
+      flash[:success] = "Rental Detail was updated successfully"
+      redirect_to rental_detail_path(params[:id])
     else
        render 'edit'
     end

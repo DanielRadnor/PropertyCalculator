@@ -1,7 +1,7 @@
 
 <h1>Rental Detail ID: <%= @rental_detail.id %></h1>
 
-<%= form_for @rental_detail, url: {action: "create"} do |f| %>
+<%= form_for @rental_detail, url: {action: "update", params: {id: @rental_detail.id}} do |f| %>
   <div>
 	  <%= f.label :number_of_beds %>
 	  <%= f.text_field :number_of_beds %>
@@ -23,6 +23,6 @@
   	<%= collection_select(:rental_detail, :scenario_id, Scenario.all, :id, :scenario_name, prompt: true) %>
   </div>  
   <div>
-  	<%= f.submit "Create" %>
+  	<%= f.submit "Update" %>
   </div>
 <% end %>

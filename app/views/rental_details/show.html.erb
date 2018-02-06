@@ -1,6 +1,8 @@
-<h1>Show page for <%= @rental_detail.id %></h1>
+
 
 <div class="well col-xs-8 col-xs-offset-2">
+
+	<h3><%= @rental_detail.scenario.property.property_name %> | scenario <%= @rental_detail.scenario.scenario_name %>.</h3>
 	
 	<ul class="nav nav-tabs">
 	  <li><%= link_to "Scenario Summary", scenario_path(@rental_detail.scenario.id)%></li>
@@ -9,7 +11,27 @@
 	  <li><%= link_to "Debt", debt_path(@rental_detail.scenario.debt.id)%></li>
 	  <li><%= link_to "Valuation Details", valuation_detail_path(@rental_detail.scenario.valuation_detail.id)%></li>
 	</ul>
-
-	<h2>This is rental detail ID <%= @rental_detail.id %></h2>
+	
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+			<th>ID</th>
+			<th>Number of Beds</th>
+			<th>Weekly Rent</th>
+			<th>Term (weeks)</th>
+			<th>Occupancy</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			<tr>
+				<td><%= @rental_detail.id %></td>
+				<td><%= @rental_detail.number_of_beds %></td>
+				<td>£<%= @rental_detail.weekly_rent %></td>	
+				<td><%= @rental_detail.term_weeks %></td>	
+				<td><%= 100 * @rental_detail.occupancy %>%</td>	
+				<td><%= link_to "Edit this rental detail", edit_rental_detail_path(@rental_detail.id), class: "btn btn-xs btn-primary" %></td>	
+			</tr>
+	    </tbody>
+	  </table>
 
 </div>
