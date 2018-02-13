@@ -1,6 +1,6 @@
 <h1>Show page for <%= @scenario.id %></h1>
 
-<div class="well col-xs-8 col-xs-offset-2">
+<div class="well col-xs-12">
 	
 	<ul class="nav nav-tabs">
 	  <li class="active"><%= link_to "Scenario Summary", scenario_path(@scenario.id)%></li>
@@ -11,5 +11,25 @@
 	</ul>
 
 	<h2>This is scenario ID <%= @scenario.id %></h2>
+	
+<div class="table-bordered">
+  <table class="table">
+ 
+
+	<tr>
+		<% date_array(Date.current(),10).each do |d|%>
+			<th><%= d.to_formatted_s(:rfc822) %></th>
+		<% end%>
+	</tr>
+
+	<tr>
+		<% date_array(Date.current(),10).each do |d|%>
+			<th>value</th>
+		<% end%>
+	</tr>
+
+  </table>
+</div>
+
 
 </div>
